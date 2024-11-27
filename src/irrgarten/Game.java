@@ -212,7 +212,11 @@ public class Game {
         
         if(resurrect){
             
-            this.jugadores.get(this.currentPlayerIndex).resurrect();
+            Player currentPlayer = this.jugadores.get(this.currentPlayerIndex);
+            
+            FuzzyPlayer fuzzyPlayer = new FuzzyPlayer(currentPlayer);
+            
+            this.jugadores.set(this.currentPlayerIndex, fuzzyPlayer);
             logResurrected();
             
         }else{

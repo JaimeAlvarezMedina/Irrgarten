@@ -23,6 +23,9 @@ public class Player extends LabyrinthCharacter {
     
     private ArrayList<Weapon> weapons; 
     private ArrayList<Shield> shields;
+    
+    private WeaponCardDeck weaponDeck;
+    private ShieldCardDeck shieldDeck;
             
     public Player(char number, float intelligence, float strength){
     
@@ -31,13 +34,19 @@ public class Player extends LabyrinthCharacter {
     
         this.weapons = new ArrayList<>();
         this.shields = new ArrayList<>();
+        
+        this.weaponDeck = new WeaponCardDeck();
+        this.shieldDeck = new ShieldCardDeck();
     }
     
     public Player(Player other){
     
         super(other); 
-        this.weapons = new ArrayList<>(other.weapons);
-        this.shields = new ArrayList<>(other.shields);
+        this.weapons = other.weapons;
+        this.shields = other.shields;
+        this.weaponDeck = other.weaponDeck;
+        this.shieldDeck = other.shieldDeck;
+        
     }
     
     public FuzzyPlayer resurrect(){
@@ -78,12 +87,12 @@ public class Player extends LabyrinthCharacter {
         
         for(int i = 0; i < wReward; i++){
             
-            Weapon wnew = newWeapon();
+            Weapon wnew = weaponDeck.nextCard();
             receiveWeapon(wnew);
         }
         for(int i = 0; i < sReward; i++){
             
-            Shield snew = newShield();
+            Shield snew = shieldDeck.nextCard();
             receiveShield(snew);
         }
         
