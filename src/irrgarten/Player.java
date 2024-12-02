@@ -15,8 +15,8 @@ public class Player extends LabyrinthCharacter {
     
     private static final int MAX_WEAPONS = 2;
     private static final int MAX_SHIELDS = 3;
-    private static final int INITIAL_HEALTH = 10;
-    private static final int HITS2LOSE = 3;
+    private static final int INITIAL_HEALTH = 1;
+    private static final int HITS2LOSE = 1;
     
     private char number;
     private int consecutiveHits = 0;
@@ -41,7 +41,9 @@ public class Player extends LabyrinthCharacter {
     
     public Player(Player other){
     
-        super(other); 
+        super(other);
+        this.number = other.number;
+        this.setHealth(INITIAL_HEALTH);
         this.weapons = other.weapons;
         this.shields = other.shields;
         this.weaponDeck = other.weaponDeck;

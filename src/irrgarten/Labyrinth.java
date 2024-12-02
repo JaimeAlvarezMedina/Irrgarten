@@ -131,10 +131,10 @@ public class Labyrinth {
         int oldRow = player.getRow();
         
         int [] newPos = dir2Pos(oldRow, oldCol, direction);
-        Monster monster = putPlayer2D(oldRow, oldCol, newPos[this.ROW],
-                                        newPos[this.COL], player);
         
-        return monster;
+        return putPlayer2D(oldRow, oldCol, newPos[ROW],
+                                           newPos[COL], player);
+        
     }
     
     public void addBlock(Orientation orientation, int startRow, int startCol, 

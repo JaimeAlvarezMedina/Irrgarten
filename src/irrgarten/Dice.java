@@ -118,7 +118,7 @@ public class Dice {
             
         }else{
         
-            Dout = validMoves.get(generator.nextInt(0, validMoves.size()));
+            Dout = validMoves.get(0);
         }
             
             

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class FuzzyPlayer extends Player {
     
     public FuzzyPlayer(Player other){
-        super(other.getNumber(), other.getIntelligence(), other.getStrength());
+        super(other);
     }
     
     @Override
