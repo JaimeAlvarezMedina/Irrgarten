@@ -97,10 +97,11 @@ public class Labyrinth {
         for(int i = 0; i < nRows; i++){
         
             for(int j = 0; j < nCols; j++){
-                
-                cadena +="[";
+
+                cadena +="";
                 cadena += this.laberinto[i][j];
-                cadena +="]";
+                cadena +=" ";
+                
             }
             cadena += "\n";
         }

@@ -2,15 +2,15 @@ package controlador;
 
 import irrgarten.Enumerados.Directions;
 import irrgarten.Game;
-import vista.TextUI;
+import vista.UI;
 
 
 public class Controller {
     
     private Game game;
-    private TextUI view;
+    private UI view;
     
-    public Controller(Game game, TextUI view) {
+    public Controller(Game game, UI view) {
         this.game = game;
         this.view = view;
     }

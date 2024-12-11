@@ -4,7 +4,7 @@
  */
 package irrgarten;
 
-import vista.TextUI;
+import vista.GUI;
 import controlador.Controller;
 import vista.UI;
 
@@ -17,9 +17,9 @@ public class TestP1 {
     //Funcion Main
     public static void main(String[] args) {
         
-        UI vista = new TextUI();
+        UI vista = new GUI();
         Game juego = new Game(1);
-        Controller controlador = new Controller( juego, (TextUI) vista);
+        Controller controlador = new Controller( juego, vista);
         
         controlador.play();
     }
