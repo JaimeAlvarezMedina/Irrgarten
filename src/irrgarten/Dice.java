@@ -117,8 +117,12 @@ public class Dice {
             Dout = preference;
             
         }else{
-        
-            Dout = validMoves.get(0);
+            if(validMoves.size()<=1){
+                Dout = validMoves.get(0);
+            }else{
+                Dout = validMoves.get(generator.nextInt(0, validMoves.size()-1));
+            }
+            
         }
             
             
